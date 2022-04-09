@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package dev.larrybattle.grpc.calculator;
+
+option java_package = "dev.larrybattle.grpc.calculator";
+option java_multiple_files = true;
+
+message CalculatorRequest{
+  int32 a = 1;
+  int32 b = 2;
+}
+
+message CalculatorResponse{
+  int32 sum = 1;
+}
+
+service Calculator {
+  rpc addTwoNumbers(CalculatorRequest) returns (CalculatorResponse) {}
+}
